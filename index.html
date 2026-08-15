@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>隆森AI · 数字员工军团</title>
+<style>
+:root{
+  --bg:#07090f; --surface:#13141a; --surface-2:#1a1d28;
+  --text:#fff; --text-90:rgba(255,255,255,.9); --text-70:rgba(255,255,255,.7); --text-50:rgba(255,255,255,.5);
+  --accent:#12d8f1; --accent-soft:rgba(18,216,241,.12);
+  --border:rgba(255,255,255,.1); --border-strong:rgba(255,255,255,.18);
+  --grad:linear-gradient(90deg,#fcd34d,#fb7185,#a78bfa);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* 导航 */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:12px;padding:16px 28px;background:linear-gradient(rgba(7,9,15,.7),transparent)}
+.nav .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:17px}
+.nav b{font-size:15px;letter-spacing:.02em}
+.nav .tag{font-size:10px;letter-spacing:.24em;color:var(--text-50)}
+.nav .spacer{flex:1}
+.ghost{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(18,216,241,.4);border-radius:7px;padding:5px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;transition:all .15s}
+.ghost:hover{background:rgba(18,216,241,.2)}
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
+.bg-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:.5}
+.bg-veil{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 50% 40%, rgba(7,9,15,.18), rgba(7,9,15,.75) 80%)}
+.hero .in{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 230px}
+.eyebrow{font-size:11px;letter-spacing:.34em;color:var(--text-50);font-weight:600;margin-bottom:26px}
+h1{font-size:clamp(42px,6.6vw,92px);font-weight:700;letter-spacing:-.035em;line-height:1.06;color:var(--text)}
+h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding:0 8px}
+.sub{color:var(--text-90);font-size:clamp(15px,1.9vw,23px);font-weight:400;margin-top:26px;line-height:1.55;max-width:26em}
+.stats{display:flex;gap:44px;margin-top:32px}
+.stats b{display:block;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stats span{font-size:12px;color:var(--text-50);letter-spacing:.1em}
+.cta-pill{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:9999px;padding:12px 54px;font-size:19.6px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;margin-top:40px;transition:background .18s,transform .18s;backdrop-filter:blur(4px)}
+.cta-pill:hover{background:rgba(255,255,255,.24);transform:translateY(-1px)}
+/* 跑马灯带 */
+.mq-wrap{position:relative;z-index:3;margin-top:-180px;padding-bottom:20px}
+.mq-mask{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.mq-track{display:flex;gap:14px;width:max-content;animation:mq 60s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-track:hover{animation-play-state:paused}
+.mcell{width:238px;flex-shrink:0;background:rgba(19,20,26,.85);border:1px solid var(--border);border-radius:16px;padding:16px;backdrop-filter:blur(8px);transition:border-color .2s,transform .2s}
+.mcell:hover{border-color:rgba(18,216,241,.5);transform:translateY(-3px)}
+.mcell .no{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;color:var(--accent);font-weight:700}
+.mcell .id{font-size:34px;font-weight:800;margin-top:6px;line-height:1}
+.mcell .nm{font-size:15px;font-weight:700;margin-top:8px;display:flex;align-items:center;gap:8px}
+.mcell .nm .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.mcell .fn{font-size:11.5px;color:var(--text-50);margin-top:6px;line-height:1.6}
+.mcell .dept{font-size:10px;letter-spacing:.14em;color:var(--text-70);margin-top:8px}
+/* 底部说明 */
+.foot{position:relative;z-index:3;text-align:center;color:var(--text-50);font-size:11px;letter-spacing:.12em;padding:26px 0 30px}
+@media(max-width:820px){
+  .hero .in{padding:90px 18px 190px}
+  .mq-wrap{margin-top:-150px}
+  .mcell{width:200px}
+  .stats{gap:26px}
+}
+@media(prefers-reduced-motion:reduce){.mq-track{animation:none}.bg-video{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">🏛</div>
+  <div><b>隆森AI</b><div class="tag">DIGITAL STAFF LEGION</div></div>
+  <div class="spacer"></div>
+  <a class="ghost" href="#" onclick="copyWechat();return false;">加微信领诊断 →</a>
+</nav>
+
+<section class="hero">
+  <video class="bg-video" autoplay muted loop playsinline src="hub_bg.mp4"></video>
+  <div class="bg-veil"></div>
+  <div class="in">
+    <div class="eyebrow">37 DIGITAL STAFF · AI电商 + AI自媒体</div>
+    <h1>一站式<span class="grad">数字员工</span>军团</h1>
+    <div class="sub">37 名有编号、有真实交付记录的 AI 员工，覆盖选品、内容、转化、运营、复盘全链路——不用招人，直接雇佣。</div>
+    <div class="stats">
+      <div><b>37</b><span>数字员工</span></div>
+      <div><b>2</b><span>垂直赛道</span></div>
+      <div><b>799</b><span>单个买断</span></div>
+    </div>
+    <a class="cta-pill" href="#" onclick="copyWechat();return false;">开始使用 →</a>
+  </div>
+</section>
+
+<div class="mq-wrap"><div class="mq-mask"><div class="mq-track" id="mq"></div></div></div>
+
+<div class="foot">隆森AI · 数字员工军团 · V8 设计语言 · 数据真实性承诺 · 2026-08-14</div>
+
+<script>
+/* 微信号复制（CTA 落地：加微信领诊断/了解入营） */
+function copyWechat(){
+  var wx="originalsize2013";
+  function done(){alert("微信号已复制："+wx+"\n加微信备注「军团」领免费诊断");}
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(wx).then(done, function(){window.prompt("请复制微信号：",wx);});
+  } else {
+    window.prompt("请复制微信号：",wx);
+  }
+}
+var STAFF=[
+[1,"知识库管理员","门下","知识管理·分类·检索"],[2,"信息早知道","尚书","热点追踪·行业动态"],[3,"行业爆款文案库","中书","爆款文案·二创"],[4,"爆款拆解复刻师","中书","拆解爆款·复刻方法论"],[5,"PPT大神","尚书","PPT/HTML/文档"],[6,"电商构图师","尚书","电商AI视觉"],[7,"系统自检员","门下","系统健康·监控"],[8,"项目技术指导","尚书","技术选型·商业诊断"],[9,"脑暴转化师","中书","需求拆解·方案设计"],[10,"AI内容操盘手","尚书","内容策略·社群运营"],[11,"自营账号助手","尚书","IP风格二创"],[12,"AI教学导师","门下","大模型科普·教学"],[13,"AI剪辑师","尚书","剪辑·字幕·混剪"],[14,"AI画图专家","尚书","AI绘图·海报"],[15,"AI竞品分析","中书","竞品情报·运营计划"],[16,"Prompt大师","中书","Prompt结构化优化"],[17,"长视频内容分析师","中书","视频深度拆解"],[18,"公众号文章库管理员","中书","抓取→归档"],[19,"libtv视频下载员","尚书","视频下载→MP4"],[20,"电商带货AI提示词","尚书","带货Prompt"],[21,"AI视频渲染工程师","尚书","渲染·合成·出片"],[22,"CallFlow情绪分析专家","尚书","对话回顾·情绪诊断"],[23,"狐说IP策略师","尚书","IP定位·风格策略"],[24,"视频高光切片师","尚书","高光提取·字幕"],[25,"分镜头设计师","尚书","12字段分镜表"],[26,"流量检查作弊器","中书","评分·盲预测·复盘"],[27,"内容选题与脚本设计师","中书","选题→脚本→分发"],[28,"AI防收割评估师","尚书","骗局分析·预警"],[29,"故事板大师","尚书","分镜·Shot List"],[30,"模型路由官","中书","任务路由·模型通道"],[31,"数据中枢","中书","数据服务·三池管理"],[32,"HTML报告渲染师","尚书","报告渲染"],[33,"克隆诊断师","中书","账号诊断·22维评分"],[34,"技能情报官","尚书","全平台搜索·四维评估"],[35,"简历诸葛亮","尚书","简历审计·优化交付"],[36,"FDE工程师","尚书","企业AI落地·部署"],[37,"评论运营官","尚书","评论区采集·分析·回复"]];
+var DOT={"中书":"#fcd34d","尚书":"#12d8f1","门下":"#a78bfa"};
+function cell(s){
+  return '<div class="mcell"><div class="no">NO.'+String(s[0]).padStart(3,"0")+'</div>'+
+    '<div class="id">'+s[0]+'</div>'+
+    '<div class="nm"><span class="dot" style="background:'+DOT[s[2]]+'"></span>'+s[1]+'</div>'+
+    '<div class="fn">'+s[3]+'</div>'+
+    '<div class="dept">'+s[2]+'省 · 数字员工</div></div>';
+}
+function build(){
+  var mq=document.getElementById("mq");
+  mq.innerHTML=STAFF.map(cell).join("")+STAFF.map(cell).join("");
+}
+build();
+</script>
+</body>
+</html>
