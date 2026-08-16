@@ -52,6 +52,49 @@ h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:tex
 .mcell .fn{font-size:11.5px;color:var(--text-50);margin-top:6px;line-height:1.6}
 .mcell .hl{font-size:11px;color:var(--accent);opacity:.92;margin-top:8px;line-height:1.55;font-weight:500}
 .mcell .dept{font-size:10px;letter-spacing:.14em;color:var(--text-70);margin-top:8px}
+/* 试工 Demo */
+.demo{position:relative;z-index:3;padding:70px 24px 16px}
+.demo .hd{text-align:center;max-width:660px;margin:0 auto 36px}
+.demo .hd .eyebrow{margin-bottom:16px}
+.demo .hd h2{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em}
+.demo .hd .sub2{color:var(--text-70);font-size:13.5px;line-height:1.75;margin-top:14px}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1100px;margin:0 auto;align-items:start}
+.dcard{background:rgba(19,20,26,.85);border:1px solid var(--border);border-radius:16px;padding:22px;backdrop-filter:blur(8px);transition:border-color .2s}
+.dcard:hover{border-color:rgba(18,216,241,.35)}
+.dhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.dno{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:var(--accent);font-weight:700;background:var(--accent-soft);border:1px solid rgba(18,216,241,.35);border-radius:6px;padding:3px 8px}
+.dhead b{font-size:16.5px;font-weight:700}
+.trial{font-size:10px;letter-spacing:.18em;color:var(--text-50);border:1px dashed rgba(255,255,255,.25);border-radius:999px;padding:3px 9px;margin-left:auto;white-space:nowrap}
+.ddesc{font-size:12px;color:var(--text-50);line-height:1.65;margin:6px 0 14px}
+.din{width:100%;background:rgba(255,255,255,.045);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:13px;line-height:1.6;padding:11px 13px;resize:vertical;outline:none;transition:border-color .15s}
+.din:focus{border-color:rgba(18,216,241,.55)}
+.din::placeholder{color:var(--text-50)}
+.drow{display:flex;gap:10px;margin-top:11px}
+.dbtn{background:var(--accent);color:#04121a;border:none;border-radius:9px;padding:9px 22px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;transition:transform .15s,filter .15s}
+.dbtn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.dbtn2{background:transparent;color:var(--text-70);border:1px solid var(--border-strong);border-radius:9px;padding:9px 16px;font-size:13px;cursor:pointer;font-family:inherit;transition:all .15s}
+.dbtn2:hover{color:var(--accent);border-color:rgba(18,216,241,.5)}
+.out{margin-top:14px;border-top:1px dashed rgba(255,255,255,.14);padding-top:13px;font-size:12.5px;line-height:1.75;color:var(--text-90)}
+.out .thinking{color:var(--accent);font-size:12px;letter-spacing:.1em}
+.orow{margin-bottom:9px}
+.olab{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.16em;color:var(--accent);font-weight:700;display:block;margin-bottom:3px}
+.otext{font-size:13px;line-height:1.75;color:var(--text-90);white-space:pre-wrap;word-break:break-word}
+.bdg{display:inline-block;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:700;letter-spacing:.04em;margin-right:6px;vertical-align:middle}
+.bdg.pos{background:rgba(52,211,153,.14);color:#34d399;border:1px solid rgba(52,211,153,.4)}
+.bdg.neg{background:rgba(251,113,133,.14);color:#fb7185;border:1px solid rgba(251,113,133,.4)}
+.bdg.dem{background:rgba(252,211,77,.13);color:#fcd34d;border:1px solid rgba(252,211,77,.4)}
+.bdg.neu{background:rgba(255,255,255,.08);color:var(--text-70);border:1px solid var(--border-strong)}
+.chip{display:inline-block;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:6px;padding:1px 8px;font-size:11px;color:var(--text-70);margin:2px 4px 2px 0;white-space:nowrap}
+.step{display:flex;gap:9px;margin-bottom:9px}
+.step .sno{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:var(--accent-soft);border:1px solid rgba(18,216,241,.35);color:var(--accent);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step .sbody{min-width:0;flex:1}
+.step .st{font-size:12px;font-weight:700;color:var(--text);display:block;margin-bottom:2px}
+.step .sd{font-size:12.5px;color:var(--text-70);line-height:1.7;margin-top:2px;white-space:pre-line;word-break:break-word}
+.note{font-size:10.5px;color:var(--text-50);letter-spacing:.05em;margin-top:12px;border-left:2px solid rgba(18,216,241,.4);padding-left:8px;line-height:1.7}
+@media(max-width:820px){
+  .demo-grid{grid-template-columns:1fr;gap:16px}
+  .demo{padding:56px 16px 12px}
+}
 /* 底部说明 */
 .foot{position:relative;z-index:3;text-align:center;color:var(--text-50);font-size:11px;letter-spacing:.12em;padding:26px 0 30px}
 @media(max-width:820px){
@@ -90,6 +133,30 @@ h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:tex
 
 <div class="mq-wrap"><div class="mq-mask"><div class="mq-track" id="mq"></div></div></div>
 
+<section class="demo">
+  <div class="hd">
+    <div class="eyebrow">TRIAL WORKSHOP · 试工 DEMO</div>
+    <h2>试工 · 亲手试试数字员工干活</h2>
+    <div class="sub2">37号评论运营官 × 4号爆款拆解复刻师——真实员工逻辑的交互演示，输入你的内容，看他们现场出活。</div>
+  </div>
+  <div class="demo-grid">
+    <div class="dcard">
+      <div class="dhead"><span class="dno">NO.037</span><b>评论运营官</b><span class="trial">试工 DEMO</span></div>
+      <div class="ddesc">输入一条评论 → 输出情感分析 + 回复话术（关键词规则 · 37号宠物行业包真实模板）</div>
+      <textarea class="din" id="c37in" rows="3" placeholder="例如：太可爱了！下期什么时候更新呀？"></textarea>
+      <div class="drow"><button class="dbtn" onclick="run37()">AI 回复</button><button class="dbtn2" onclick="demo37()">填个示例</button></div>
+      <div class="out" id="c37out"></div>
+    </div>
+    <div class="dcard">
+      <div class="dhead"><span class="dno">NO.004</span><b>爆款拆解复刻师</b><span class="trial">试工 DEMO</span></div>
+      <div class="ddesc">粘贴视频链接或一句话描述 → 输出六步拆解报告（选题→结构→脚本→钩子→节奏→公式）</div>
+      <textarea class="din" id="c4in" rows="3" placeholder="例如：萌宠账号的猫咪离家出走视频"></textarea>
+      <div class="drow"><button class="dbtn" onclick="run4()">拆解</button><button class="dbtn2" onclick="demo4()">填个示例</button></div>
+      <div class="out" id="c4out"></div>
+    </div>
+  </div>
+</section>
+
 <div class="foot">隆森AI · 数字员工军团 · V8 设计语言 · 数据真实性承诺 · 2026-08-14</div>
 
 <script>
@@ -117,6 +184,160 @@ function cell(s){
 function build(){
   var mq=document.getElementById("mq");
   mq.innerHTML=STAFF.map(cell).join("")+STAFF.map(cell).join("");
+}
+/* ==================== 试工 Demo · 37号 评论运营官 ==================== */
+/* 真实素材：pet.json templates（催更回应/求链接/负面安抚/欢迎互动）+ analysis_engine.py 情感词库 */
+var PET_TEMPLATES={
+  "催更回应":["哈哈收到！下期已经在剪了，记得来看～","安排！存货多着呢～"],
+  "求链接":["私信发你啦，注意查收～","链接这就来，私信见～"],
+  "负面安抚":["收到建议！下次改进，猫猫存货多着呢～"],
+  "欢迎互动":["谢谢支持！你家也养猫吗？评论区聊聊～"],
+  "强烈负面":["抱歉让你失望了！已反馈团队核实，货不对板可以私信我们，一定处理到位～"]
+};
+var SENT37={
+  strongPos:["绝绝子","awsl","yyds","神仙","爱了爱了","太棒","超爱","无敌","封神","惊艳","疯狂打call","天花板","吹爆"],
+  mildPos:["喜欢","不错","好","可爱","好看","赞","支持","棒","实用","有用","可以","优秀","满意"],
+  mildNeg:["一般","还行","差","不行","失望","无语","尴尬","别扭","不咋样","略","太贵","贵了","好贵","真贵","贵死","涨价","不值","划不来"],
+  strongNeg:["垃圾","骗人","假货","退钱","恶心","坑爹","翻车","避雷","智商税","割韭菜","拉黑","差评","举报"]
+};
+var DEMAND37=["怎么","如何","多少钱","哪里","教程","链接","求","想要","同款","推荐","在哪","吗","？","?"];
+var RULES37=[
+  {tpl:"强烈负面",kws:["垃圾","骗人","假货","恶心","坑爹","翻车","避雷","割韭菜","差评"]},
+  {tpl:"负面安抚",kws:["太短","无聊","差","不好","贵","失望","不行","一般"]},
+  {tpl:"求链接",kws:["多少钱","在哪买","哪里买","链接","求链接","同款","怎么买"]},
+  {tpl:"催更回应",kws:["下期","更新","催更","求多更","追更","连更"]},
+  {tpl:"欢迎互动",kws:["可爱","好萌","萌","治愈","好看","乖","喜欢"]}
+];
+var ASPECTS37=[["内容质量",["好看","精彩","干货","无聊","水"]],["人设形象",["可爱","萌","乖","帅","治愈"]],["声音音乐",["好听","BGM","吵","刺耳"]],["节奏时长",["太短","太长","节奏好","拖沓"]],["价格转化",["多少钱","链接","下单","贵"]],["情感共鸣",["破防","泪目","感动","无语"]],["槽点梗",["笑死","绝绝子","绷不住"]],["需求提问",["求教程","怎么弄","在哪买","下期","催更"]],["竞品对比",["不如"]]];
+function hasAny(t,arr){for(var i=0;i<arr.length;i++){if(t.indexOf(arr[i])>-1)return true;}return false;}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function run37(){
+  var t=(document.getElementById("c37in").value||"").trim();
+  var out=document.getElementById("c37out");
+  if(!t){out.innerHTML='<div class="otext" style="color:var(--text-50)">先输入一条评论，再点「AI 回复」～</div>';return;}
+  out.innerHTML='<div class="thinking">▍37号 正在分析评论…</div>';
+  setTimeout(function(){
+    /* 关键词规则命中（按优先级） */
+    var hits=[];
+    for(var i=0;i<RULES37.length;i++){
+      var r=RULES37[i];
+      for(var j=0;j<r.kws.length;j++){if(t.indexOf(r.kws[j])>-1){hits.push({tpl:r.tpl,kw:r.kws[j]});break;}}
+    }
+    var hitTpls={};
+    for(var h=0;h<hits.length;h++)hitTpls[hits[h].tpl]=1;
+    /* ① 情感判定（强烈负面>负面>需求>正面>中性） */
+    var main="中性",extra="";
+    if(hitTpls["强烈负面"]||hasAny(t,SENT37.strongNeg)){main="强烈负面";}
+    else if(hitTpls["负面安抚"]||hasAny(t,SENT37.mildNeg)){main="负面";}
+    else if(hitTpls["求链接"]||hitTpls["催更回应"]||hasAny(t,DEMAND37)){main="需求";if(hitTpls["欢迎互动"])extra="· 含正面信号";}
+    else if(hitTpls["欢迎互动"]||hasAny(t,SENT37.strongPos)||hasAny(t,SENT37.mildPos)){main=hasAny(t,SENT37.strongPos)?"强烈正面":"正面";}
+    var cls={"强烈负面":"neg","负面":"neg","需求":"dem","正面":"pos","强烈正面":"pos","中性":"neu"}[main]||"neu";
+    /* ② 回复话术：真实模板组合（命中前两类各取一条，可组合） */
+    var parts=[],used={};
+    for(var p=0;p<hits.length&&parts.length<2;p++){
+      var tp=hits[p].tpl;if(used[tp])continue;used[tp]=1;
+      var arr=PET_TEMPLATES[tp];parts.push(arr[Math.floor(Math.random()*arr.length)]);
+    }
+    if(!parts.length)parts.push(PET_TEMPLATES["欢迎互动"][0]);
+    /* 方面识别（pet.json aspects） */
+    var asp=[];
+    for(var a=0;a<ASPECTS37.length;a++){if(hasAny(t,ASPECTS37[a][1]))asp.push(ASPECTS37[a][0]);}
+    var aspHtml=asp.length?'<span style="color:var(--text-50)">命中方面：</span>'+asp.map(function(x){return '<span class="chip">'+x+'</span>';}).join(''):'<span class="chip">其他</span>';
+    out.innerHTML=
+      '<div class="orow"><span class="olab">① 情感分析</span><div class="otext"><span class="bdg '+cls+'">'+main+'</span>'+extra+aspHtml+'</div></div>'+
+      '<div class="orow"><span class="olab">② 回复话术</span><div class="otext">“'+parts.join(' ')+'”</div></div>'+
+      '<div class="note">试工 Demo · 基于 37号宠物行业包词库（pet.json 真实模板 + 情感词库简化匹配）</div>';
+  },450);
+}
+function demo37(){
+  document.getElementById("c37in").value="太可爱了！下期什么时候更新呀？";
+  run37();
+}
+/* ==================== 试工 Demo · 4号 爆款拆解复刻师 ==================== */
+/* 方法论：六步流水线（选题定位→结构拆解→脚本还原→钩子提取→节奏分析→公式输出），素材取自 4号员工手册 */
+var TRACKS4=[
+  {id:"萌宠",kws:["猫","狗","宠物","萌","猫咪","狗狗","仓鼠","兔子","铲屎","毛孩子","离家出走","呼噜"],
+   desc:"「养猫人才懂」式情感共鸣 + 治愈系是最大爆点，养宠冷知识反常识选题容易爆",
+   elems:["情感共鸣","治愈系","反常识","实用性"],script:"教程型混合故事型",
+   rhythm:"前 3 秒抛冲突（猫咪行为反常 / 声音特写），每 10-15 秒一个信息点；萌宠赛道节奏放慢，治愈感优先，BGM 卡点收尾",
+   formula:"声音钩子 + 反常识论点 + 三分点干货 + 转发收尾"},
+  {id:"美食",kws:["吃","饭","菜","美食","厨房","食谱","探店","火锅","烧烤","甜点","炒","好吃"],
+   desc:"感官冲击 = 第一生产力，特写 + 声音（滋滋声 / 脆响）勾食欲，「3分钟搞定」教程型吃香",
+   elems:["感官冲击","实用性","对比","身份认同"],script:"教程型（步骤清单）",
+   rhythm:"前 3 秒直接上成品 / 下锅声，每 8-12 秒一个步骤点；节奏明快，音效放大，结尾成品特写",
+   formula:"感官钩子 + 步骤递进 + 成品反转收尾"},
+  {id:"美妆",kws:["妆","护肤","口红","粉底","美妆","眼影","面膜","素颜","卡粉"],
+   desc:"妆前 vs 妆后对比 + 实测数据最稳，「原来手法错了」反常识选题常爆",
+   elems:["对比","数据冲击","反常识","焦虑"],script:"教程型（前后对比）",
+   rhythm:"前 3 秒抛素颜 / 瑕疵状态制造反差，每 10 秒一个手法要点；结尾上妆完成特写，视觉冲击收尾",
+   formula:"对比钩子 + 实测数据 + 手法纠错 + 效果反转"},
+  {id:"3C",kws:["手机","电脑","数码","耳机","充电","相机","键盘","3C","测评"],
+   desc:"数据冲击 + 实用价值为王，实测跑分 / 续航 / 价格对比最能建立信任",
+   elems:["数据冲击","实用价值","对比","反常识"],script:"清单型（参数逐条）",
+   rhythm:"前 3 秒甩结论 / 数据，每 10-15 秒一个卖点；节奏稳定，专业感优先",
+   formula:"数据钩子 + 三组对比 + 结论收尾"},
+  {id:"剧情",kws:["剧情","短剧","反转","故事","悬疑","穿越","复仇","结局"],
+   desc:"反转密度决定完播率，每 15-20 秒一个反转点，结尾留钩引评论",
+   elems:["情感共鸣","好奇心","反转","身份认同"],script:"故事型（冲突→转折→共鸣）",
+   rhythm:"前 3 秒抛悬念冲突，每 15-20 秒一个反转点；结尾卡点留悬念，引导评论区猜结局",
+   formula:"悬念钩子 + 三段递进 + 结尾反转"}
+];
+var HOOKS4=[
+  ["原来{SUB}是这个原因","反常识式 · 推翻大众认知"],
+  ["90%的人不知道，{SUB}的真相","数字冲击式 · 用数字制造反差"],
+  ["养了X年才知道，{SUB}","身份认同式 · 群体归属"],
+  ["为什么{SUB}？看完你就懂了","好奇心式 · 制造信息缺口"],
+  ["别再{SUB}了，方法其实很简单","焦虑反转式 · 先戳中再解决"],
+  ["{SUB}：以前 vs 现在","对比式 · 前后反差"]
+];
+function pickTrack4(t){
+  for(var i=0;i<TRACKS4.length;i++){if(hasAny(t,TRACKS4[i].kws))return TRACKS4[i];}
+  return {id:"泛生活",kws:[],desc:"先定赛道再拆结构：情感共鸣 + 实用价值双保险，好奇心开场稳妥",
+    elems:["情感共鸣","实用价值","好奇心","对比"],script:"故事型混合清单型",
+    rhythm:"前 3 秒抛冲突或反差，每 10-15 秒一个信息点；结尾给转发理由，引导评论互动",
+    formula:"对比钩子 + 三段递进 + 转发收尾"};
+}
+function run4(){
+  var t=(document.getElementById("c4in").value||"").trim();
+  var out=document.getElementById("c4out");
+  if(!t){out.innerHTML='<div class="otext" style="color:var(--text-50)">粘贴一个视频链接或一句话描述，再点「拆解」～</div>';return;}
+  out.innerHTML='<div class="thinking">▍4号 正在反向工程这条爆款…</div>';
+  setTimeout(function(){
+    var clean=t.replace(/https?:\/\/\S+/g,"").replace(/[，。！？,.!?]/g," ").trim();
+    var sub=clean.length>14?clean.slice(0,14)+"…":clean;
+    if(!sub)sub="这条视频";
+    var esub=esc(sub);
+    var tr=pickTrack4(t);
+    /* ① 选题定位 */
+    var s1='<b style="color:var(--text)">'+esc(tr.id)+'</b> · '+esc(tr.desc)+'<br>命中元素：'+tr.elems.map(function(x){return '<span class="chip">'+esc(x)+'</span>';}).join('');
+    /* ② 结构拆解：钩子/铺垫/爆点/引导 四段式 */
+    var s2='<b style="color:var(--text)">钩子(0-3s)</b>：'+esub+'——反常画面 / 声音直接开局，第一秒抛冲突<br>'+
+      '<b style="color:var(--text)">铺垫(3-15s)</b>：用身份句切入（「养X年才知道」），快速交代背景<br>'+
+      '<b style="color:var(--text)">爆点(15-40s)</b>：反常识论点「原来'+esub+'是这个原因」+ 3 个分点干货<br>'+
+      '<b style="color:var(--text)">引导(结尾)</b>：「转给'+esc(tr.id)+'的朋友」+ 评论区提问留钩';
+    /* ③ 脚本还原：口播骨架 */
+    var s3='(钩子) 养X年才知道，'+esub+'根本不是你想的那样\n(铺垫) 先抛反常识论点，勾住好奇心\n(分点) 第一：具体细节；第二：反常识证据；第三：实用建议\n(收尾) 转给'+esc(tr.id)+'的朋友，评论区聊聊你的看法';
+    /* ④ 钩子提取：3 个备选（内置句式库轮换） */
+    var start=(clean.length||1)%HOOKS4.length;
+    var hooks="";
+    for(var k=0;k<3;k++){
+      var h=HOOKS4[(start+k)%HOOKS4.length];
+      var htxt=h[0].split("{SUB}").join(esub);
+      hooks+='<div class="otext" style="margin-bottom:4px">· “'+htxt+'”<span style="color:var(--text-50);font-size:11px">　'+esc(h[1])+'</span></div>';
+    }
+    out.innerHTML=
+      '<div class="step"><span class="sno">1</span><div class="sbody"><span class="st">选题定位</span><div class="sd">'+s1+'</div></div></div>'+
+      '<div class="step"><span class="sno">2</span><div class="sbody"><span class="st">结构拆解 · 四段式</span><div class="sd">'+s2+'</div></div></div>'+
+      '<div class="step"><span class="sno">3</span><div class="sbody"><span class="st">脚本还原 · 口播骨架（'+esc(tr.script)+'）</span><div class="sd">'+s3+'</div></div></div>'+
+      '<div class="step"><span class="sno">4</span><div class="sbody"><span class="st">钩子提取 · 3 个备选</span><div class="sd">'+hooks+'</div></div></div>'+
+      '<div class="step"><span class="sno">5</span><div class="sbody"><span class="st">节奏分析</span><div class="sd">'+esc(tr.rhythm)+'</div></div></div>'+
+      '<div class="step"><span class="sno">6</span><div class="sbody"><span class="st">公式输出 · 可复用公式</span><div class="sd"><span class="bdg pos" style="background:var(--accent-soft);color:var(--accent);border-color:rgba(18,216,241,.4)">'+esc(tr.formula)+'</span></div></div></div>'+
+      '<div class="note">试工 Demo · 六步流水线简化演示，完整版见 4号员工手册（博主蒸馏 / 8大元素 / 75个标题公式）</div>';
+  },450);
+}
+function demo4(){
+  document.getElementById("c4in").value="萌宠账号的猫咪离家出走视频";
+  run4();
 }
 build();
 </script>
