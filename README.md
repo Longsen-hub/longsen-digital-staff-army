@@ -21,3 +21,31 @@ GitHub Pages：https://Longsen-hub.github.io/longsen-digital-staff-army/
 ## License
 
 MIT
+
+---
+
+## Quick Start
+
+```bash
+# 零依赖，任选其一
+python3 -m http.server 8000
+# 或直接用浏览器打开 index.html
+```
+
+## Project Structure
+
+```
+.
+├── index.html       # 军团落地页（员工跑马灯/服务/案例/Demo 区块）
+└── README.md
+```
+
+## Tech Stack
+
+- 纯 HTML/CSS/JavaScript（零第三方依赖）
+- 视频背景 + 响应式布局
+- 可静态部署到 GitHub Pages
+
+## License
+
+[MIT](LICENSE)
